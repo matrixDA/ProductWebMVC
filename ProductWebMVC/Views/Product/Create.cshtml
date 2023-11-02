@@ -1,0 +1,23 @@
+﻿@model ProductWebMVC.Models.Product
+@{
+    ViewData["Title"] = "Create a new Product";
+}
+<h2>Complete the form</h2>
+<fieldset>
+    @using (Html.BeginForm())
+    {
+        
+        <p>
+            @Html.LabelFor(x=>x.Price);
+            @Html.EditorFor(x => x.Price);
+        </p>
+        <p>
+            @Html.LabelFor(x=>x.Description);
+            @Html.TextAreaFor(x => x.Description);
+        </p>
+        <p>
+            <button type="submit">Create Product</button>
+        </p>
+    }
+
+</fieldset>
