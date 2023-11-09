@@ -10,6 +10,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProductContext>(options => 
 options.UseSqlServer(builder.Configuration.GetConnectionString("ProductContext")));
 
+builder.Services.AddSwaggerDocument();
+
+builder.Services.AddScoped<IProductService, ProductService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -32,6 +36,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseOpenApi();
+app.UseSwaggerUi3();
 
 app.MapControllerRoute(
     name: "default",
