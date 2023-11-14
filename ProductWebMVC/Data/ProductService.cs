@@ -9,12 +9,12 @@ namespace ProductWebMVC.Data
         {
             ctx = context;
         }
-        List<Product> IProductService.GetAllProducts()
+        public List<Product> GetAllProducts()
         {
             return ctx.Products.ToList();
         }
 
-        Product IProductService.GetProductById(int Id)
+        public Product GetProductById(int Id)
         {
             return ctx.Products.FirstOrDefault(x => x.Id == Id);
         }

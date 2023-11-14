@@ -9,9 +9,9 @@ namespace ProductWebMVC.Controllers
     {
         IProductService ctx;
 
-        public ProductAPIController(IProductService product) 
+        public ProductAPIController(IProductService context) 
         {
-            ctx = product;
+            ctx = context;
         }
 
         [HttpGet]
